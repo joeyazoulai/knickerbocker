@@ -36,7 +36,7 @@
         zoom: 11
     });
 
-    map.on('load', function () {
+   /* map.on('load', function () {
 		map.addSource('radar', {
 			type: 'vector',
 			url: 'images/follow_the_signs.svg',
@@ -53,6 +53,19 @@
 			'type': 'raster',
 			'source': 'radar'
 		});
+	}); */
+
+	
+	map.on('zoom', function() {
+		map.dragPan.disable();
+		var currentZoom = map.getZoom();
+		console.log(currentZoom);
+
+		/*if(currentZoom >= 12){
+			console.log('zoom detected!')
+			map.panTo([-73.91783606311878, 40.877208749425655]);
+			
+		}*/
 	});
 
 
