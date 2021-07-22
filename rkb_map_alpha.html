@@ -65,6 +65,7 @@
 		var currentZoom = map.getZoom();
 
 		map.dragPan.disable();
+		map.dragRotate.disable();
 		console.log(currentZoom);
 		/*if(currentZoom >= 12){
 			console.log('zoom detected!')	
@@ -73,6 +74,7 @@
 
 	map.on('zoomend', function(){
 		map.dragPan.enable();
+		map.dragRotate.enable();
 		//map.touchZoomRotate.enableRotation();
 		/*map.panTo([-73.91783606311878, 40.877208749425655]);*/
 	});
