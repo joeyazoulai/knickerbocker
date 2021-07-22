@@ -56,11 +56,14 @@
 	}); */
 
 	
-	map.on('zoom', function() {
+	map.on('zoomstart', function() {
 		map.dragPan.disable();
+		map.dragRotate.disable();
+	});
+
+	map.on('zoom', function(){
 		var currentZoom = map.getZoom();
 		console.log(currentZoom);
-
 		/*if(currentZoom >= 12){
 			console.log('zoom detected!')
 			map.panTo([-73.91783606311878, 40.877208749425655]);
@@ -69,8 +72,8 @@
 	});
 
 	map.on('zoomend', function(){
+		map.dragRotate.disable();
 		map.dragPan.enable();
-
 	});
 
 
